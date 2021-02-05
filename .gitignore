@@ -1,5 +1,13 @@
+# 기본
 .vscode
 test.*
-.idea
+
+# 데이터 (혹시나 해서 이중 잠금)
+0. data
 *.csv
 github.com
+
+# 모델 관련해서 만들어지는 거
+.idea
+model
+*.hdf5
