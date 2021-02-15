@@ -116,43 +116,43 @@
 
 # 코드는 전체로 보자.
 # default
-import numpy as np
-import tensorflow as tf
+# import numpy as np
+# import tensorflow as tf
 
-# preprocessing
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+# # preprocessing
+# from tensorflow.keras.preprocessing.text import Tokenizer
+# from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-# model constructure
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Flatten, Embedding
+# # model constructure
+# from tensorflow.keras.models import Sequential
+# from tensorflow.keras.layers import Dense, Flatten, Embedding
 
-docs = ["너무 재밌네요", "최고예요", "참 잘 만든 영화예요", "추천하고 싶은 영화입니다.", "한 번 더 보고 싶네요", "글쎄요", "별로예요", "생각보다 지루하네요", "연기가 어색해요", "재미없어요"]
-classes = np.array([1, 1, 1, 1, 1, 0, 0, 0, 0, 0])
+# docs = ["너무 재밌네요", "최고예요", "참 잘 만든 영화예요", "추천하고 싶은 영화입니다.", "한 번 더 보고 싶네요", "글쎄요", "별로예요", "생각보다 지루하네요", "연기가 어색해요", "재미없어요"]
+# classes = np.array([1, 1, 1, 1, 1, 0, 0, 0, 0, 0])
 
-token = Tokenizer()
-token.fit_on_texts(docs)
-print(token.word_index)
+# token = Tokenizer()
+# token.fit_on_texts(docs)
+# print(token.word_index)
 
-x = token.texts_to_sequences(docs)
-print(x)
-# 문장별로 사용한 단어의 수가 다르다(다를 수 있다)
-# 그러나 우리는 input의 크기를 맞춰야 한다.
-# 이때 이용하는 것이 패딩, 즉 0을 덧데는 것이다.
+# x = token.texts_to_sequences(docs)
+# print(x)
+# # 문장별로 사용한 단어의 수가 다르다(다를 수 있다)
+# # 그러나 우리는 input의 크기를 맞춰야 한다.
+# # 이때 이용하는 것이 패딩, 즉 0을 덧데는 것이다.
 
-padded_x = pad_sequences(x, 4)
-print(padded_x)
-# max 크기로 맞추면 되지 않을까.
-# 여기까지는 각 문장 당 쓰인 단어를 숫자로 치환하는 과정이었음.
+# padded_x = pad_sequences(x, 4)
+# print(padded_x)
+# # max 크기로 맞추면 되지 않을까.
+# # 여기까지는 각 문장 당 쓰인 단어를 숫자로 치환하는 과정이었음.
 
-word_size = len(token.word_index) + 1
+# word_size = len(token.word_index) + 1
 
-model = Sequential()
-model.add(Embedding(word_size, 8, input_length=4))
-model.add(Flatten())
-model.add(Dense(1, activation="sigmoid"))
+# model = Sequential()
+# model.add(Embedding(word_size, 8, input_length=4))
+# model.add(Flatten())
+# model.add(Dense(1, activation="sigmoid"))
 
-model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])
+# model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])
 
-model.fit(padded_x, classes, epochs=20)
-print("\nAccuracy: %.4f" % model.evaluate(padded_x, classes)[1])
+# model.fit(padded_x, classes, epochs=20)
+# print("\nAccuracy: %.4f" % model.evaluate(padded_x, classes)[1])
