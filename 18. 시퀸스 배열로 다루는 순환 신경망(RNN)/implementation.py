@@ -187,3 +187,4 @@ plt.xlabel("epoch")
 plt.ylabel("loss")
 plt.show()
 # 0.8516
+# with, 0.8515
