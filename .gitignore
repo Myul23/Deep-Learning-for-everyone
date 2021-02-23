@@ -11,3 +11,6 @@ github.com
 .idea
 model
 *.hdf5
+
+# 학습이 너무 오래 걸리기도 하고, 이런 식으로 진행된다는 걸 그림을 통해서라도 보고자 남김
+# gan_images
