@@ -39,6 +39,7 @@ discriminator.add(Activation(LeakyReLU(0.2)))
 discriminator.add(Dropout(0.3))
 discriminator.add(Flatten())
 discriminator.add(Dense(1, activation="sigmoid"))
+discriminator.summary()
 
 discriminator.compile(loss="binary_crossentropy", optimizer="adam")
 discriminator.trainable = False
@@ -92,5 +93,5 @@ def gan_train(epoch, batch_size, saving_interval):
             # 맞네, 한 번에 25개의 그림(0-24)을 저장하는 것.
 
 
-gan_train(4001, 32, 200)
+# gan_train(4001, 32, 200)
 # 제발 시간 많은 때 돌리자.

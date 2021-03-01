@@ -2,7 +2,7 @@
 # 생성적 적대 신경망 (GAN, Generative Adversarial Networks): 가상의 이미지를 만들어내는 알고리즘
 # GAN 내부에서 (적대적인) 경합을 진행
 # (Ian Goodfellow said) 보다 진짜 같은 가짜를 만들고자 하는 위조지폐범과 진짜 같은 가짜를 판별하고자 하는 경찰의 경합
-# 이때 위조지폐범, 즉 가까를 만들어 내는 파트를 생성자 (Generator)
+# 이때 위조지폐범, 즉 가짜를 만들어 내는 파트를 생성자 (Generator)
 # (나머지) 경찰, 즉 진위를 가려내는 파트를 판별자 (Discriminator)
 # DCGAN (Deep Convolutional GAN): Convolutional + GAN
 # 초창기 GAN은 굳이 이미지를 타겟으로 하지 않아서 그랬는지? 아니면 CNN 개념이 나오기 전이라서 그랬는지 Convolutional 계층을 이용하지 않았음. 그래서 DCGAN이 등장하면서 GAN 알고리즘을 확립한 느낌
