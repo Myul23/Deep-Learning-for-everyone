@@ -5,12 +5,11 @@ test.*
 # 데이터 (혹시나 해서 이중 잠금)
 0. data
 *.csv
-github.com
+raw.*
+train
+test
 
 # 모델 관련해서 만들어지는 거
 .idea
 model
 *.hdf5
-
-# 학습이 너무 오래 걸리기도 하고, 이런 식으로 진행된다는 걸 그림을 통해서라도 보고자 남김
-# gan_images
